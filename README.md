@@ -1,6 +1,6 @@
 # RingBuffer
 
-Project Overview
+**Project Overview**
 
 This project implements a Ring Buffer with a single writer and multiple readers.
 The buffer has a fixed capacity and stores integer values.

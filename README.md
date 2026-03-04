@@ -14,7 +14,7 @@ If the buffer becomes full, new writes overwrite the oldest data. In this situat
 
 The system follows object-oriented design principles and separates responsibilities between classes.
 
-RingBuffer
+**RingBuffer**
 
 The RingBuffer class is responsible for:
 
@@ -30,7 +30,7 @@ Handling overwriting when the buffer becomes full
 
 Only one writer calls the write() method.
 
-Reader
+**Reader**
 
 The Reader class represents an independent reader.
 
@@ -49,7 +49,7 @@ Returning null if no new data is available
 Multiple readers can read from the same buffer without affecting each other.
 
 
-
+# UML Diagrams
 
 **UML Class Diagram**
 

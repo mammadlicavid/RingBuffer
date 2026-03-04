@@ -34,7 +34,7 @@ The RingBuffer class is responsible:
 
 The Reader class represents an independent reader and each reader maintains its own read position (nextSeq).
 
-- Responsibilities of the Reader class:
+Responsibilities of the Reader class:
 
 - Reading values from the buffer
 

@@ -16,37 +16,37 @@ The system follows object-oriented design principles and separates responsibilit
 
 **RingBuffer**
 
-The RingBuffer class is responsible for:
+The RingBuffer class is responsible:
 
-Managing the fixed-size buffer storage
+- Managing the fixed-size buffer storage
 
-Storing written values
+- Storing written values
 
-Maintaining the writer position (writeSeq)
+- Maintaining the writer position (writeSeq)
 
-Creating new Reader objects
+- Creating new Reader objects
 
-Handling overwriting when the buffer becomes full
+- Handling overwriting when the buffer becomes full
 
-Only one writer calls the write() method.
+- Only one writer calls the write() method.
 
 **Reader**
 
-The Reader class represents an independent reader.
+- The Reader class represents an independent reader.
 
-Each reader maintains its own read position (nextSeq).
+- Each reader maintains its own read position (nextSeq).
 
-Responsibilities of the Reader class:
+- Responsibilities of the Reader class:
 
-Reading values from the buffer
+- Reading values from the buffer
 
-Tracking its own position
+- Tracking its own position
 
-Detecting when it has fallen behind and data has been overwritten
+- Detecting when it has fallen behind and data has been overwritten
 
-Returning null if no new data is available
+- Returning null if no new data is available
 
-Multiple readers can read from the same buffer without affecting each other.
+- Multiple readers can read from the same buffer without affecting each other.
 
 
 # UML Diagrams

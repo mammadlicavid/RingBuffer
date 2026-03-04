@@ -1,0 +1,12 @@
+@startuml
+actor Writer
+participant RingBuffer
+
+Writer -> RingBuffer : write(x)
+activate RingBuffer
+RingBuffer -> RingBuffer : index = writeSeq % capacity
+RingBuffer -> RingBuffer : buffer[index] = x
+RingBuffer -> RingBuffer : seq[index] = writeSeq
+RingBuffer -> RingBuffer : writeSeq++
+deactivate RingBuffer
+@enduml

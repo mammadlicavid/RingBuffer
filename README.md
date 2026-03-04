@@ -1,6 +1,13 @@
 # RingBuffer
-This is the repository for Assignment 2 in Object Oriented Analysis &amp; Design
 
+Project Overview
+
+This project implements a Ring Buffer with a single writer and multiple readers.
+The buffer has a fixed capacity and stores integer values.
+
+A single writer can continuously write values into the buffer. Multiple readers can read the values independently, meaning that reading by one reader does not remove the data for other readers.
+
+If the buffer becomes full, new writes overwrite the oldest data. In this situation, slow readers may miss some values that were overwritten before they were read.
 
 
 

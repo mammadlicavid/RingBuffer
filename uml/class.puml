@@ -1,0 +1,23 @@
+@startuml
+class RingBuffer {
+  - capacity : int
+  - buffer : int[]
+  - seq : long[]
+  - writeSeq : long
+  + RingBuffer(capacity:int)
+  + write(x:int) : void
+  + createReader() : Reader
+  ~ getWriteSeq() : long
+  ~ getCapacity() : int
+  ~ getValueAt(sequence:long) : int
+}
+
+class Reader {
+  - rb : RingBuffer
+  - nextSeq : long
+  + Reader(rb:RingBuffer, startSeq:long)
+  + read() : Integer
+}
+
+RingBuffer "1" --> "many" Reader : creates
+@enduml

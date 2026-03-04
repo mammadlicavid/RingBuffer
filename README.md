@@ -61,3 +61,12 @@ Responsibilities of the Reader class:
 
 <img width="314" height="378" alt="image" src="https://github.com/user-attachments/assets/487ad614-ee6f-4b1d-9c29-0635b2469c34" />
 
+# How to Run
+
+Open the project folder and run:
+
+javac *.java
+
+Run the test program
+
+java Main

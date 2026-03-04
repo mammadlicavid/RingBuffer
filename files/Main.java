@@ -3,22 +3,16 @@ public class Main {
 
         RingBuffer rb = new RingBuffer(3);
 
-        Reader r1 = rb.createReader();
-        Reader r2 = rb.createReader();
+        Reader slow = rb.createReader();
 
-        rb.write(10);
-        rb.write(20);
+        rb.write(1);
+        rb.write(2);
+        rb.write(3);
+        rb.write(4); // overwrites 1
 
-        System.out.println(r1.read()); // 10
-        System.out.println(r2.read()); // 10
-        System.out.println(r2.read()); // 20
-
-        rb.write(30);
-        rb.write(40); // overwrites oldest
-
-        System.out.println(r1.read()); // 20 (still ok)
-        System.out.println(r1.read()); // 30
-        System.out.println(r1.read()); // 40
-        System.out.println(r1.read()); // null
+        System.out.println(slow.read()); // should print 2 (1 was missed)
+        System.out.println(slow.read()); // 3
+        System.out.println(slow.read()); // 4
+        System.out.println(slow.read()); // null
     }
 }

@@ -1,0 +1,21 @@
+@startuml
+actor Client
+participant Reader
+participant RingBuffer
+
+Client -> Reader : read()
+activate Reader
+Reader -> RingBuffer : lock
+activate RingBuffer
+Reader -> RingBuffer : newest = getWriteSeq()
+Reader -> RingBuffer : oldest = max(0, newest - getCapacity())
+Reader -> Reader : if nextSeq < oldest\nnextSeq = oldest
+Reader -> Reader : if nextSeq >= newest\nreturn null
+Reader -> RingBuffer : getValueAt(nextSeq)
+RingBuffer --> Reader : value
+Reader -> Reader : nextSeq++
+RingBuffer -> RingBuffer : unlock
+deactivate RingBuffer
+Reader --> Client : value/null
+deactivate Reader
+@enduml

@@ -1,3 +1,5 @@
+package com.example.demo;
+
 public class Reader {
 
     private final RingBuffer rb;
